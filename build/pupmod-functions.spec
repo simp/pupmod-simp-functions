@@ -1,7 +1,7 @@
 Summary: Functions Puppet Module
 Name: pupmod-functions
 Version: 2.1.0
-Release: 4
+Release: 5
 License: Apache License, Version 2.0
 Group: Applications/System
 Source: %{name}-%{version}-%{release}.tar.gz
@@ -53,6 +53,10 @@ fi
 # Post uninstall stuff
 
 %changelog
+* Thu May 07 2015 Chris Tessmer <chris.tessmer@onyxpoint.com> - 2.1.0-5
+- Explicitly require puppet/util/selinux in Init_ulimit sysv provider.
+- This prevents crashes during `puppet describe anything` on RHEL 7.1.
+
 * Fri Jan 16 2015 Trevor Vaughan <tvaughan@onyxpoint.com> - 2.1.0-4
 - Changed puppet-server requirement to puppet
 
@@ -129,7 +133,7 @@ fi
 * Tue Oct 26 2010 Maintenance - 1-1
 - Converting all spec files to check for directories prior to copy.
 
-* Fri May 20 2010 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.0-0
+* Thu May 20 2010 Trevor Vaughan <tvaughan@onyxpoint.com> - 1.0-0
 - Refactor and doc update.
 - Actually imported the functions globally so that everything in the world didn't break.
 - This is equivalent to what was happening before.

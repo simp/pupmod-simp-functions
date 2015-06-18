@@ -1,3 +1,5 @@
+require 'puppet/util/selinux'
+
 Puppet::Type.type(:init_ulimit).provide(:sysv) do
 
   # TODO: Remove this when Puppet::Util::SELinux is fixed
