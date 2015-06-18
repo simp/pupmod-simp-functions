@@ -27,9 +27,9 @@ define functions::init_mod_open_files (
 ) {
 
   init_ulimit { "mod_open_files_$name":
-    target      => $name,
-    item        => 'max_open_files',
-    value       => $max_open_files
+    target => $name,
+    item   => 'max_open_files',
+    value  => $max_open_files
   }
 
   validate_integer($max_open_files)

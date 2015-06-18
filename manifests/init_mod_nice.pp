@@ -29,9 +29,9 @@ define functions::init_mod_nice (
 ) {
 
   init_ulimit { "mod_nice_$name":
-    target      => $name,
-    item        => 'max_nice',
-    value       => $nice_level
+    target => $name,
+    item   => 'max_nice',
+    value  => $nice_level
   }
 
   validate_integer($nice_level)
