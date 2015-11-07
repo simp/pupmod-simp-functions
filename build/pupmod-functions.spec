@@ -1,7 +1,7 @@
 Summary: Functions Puppet Module
 Name: pupmod-functions
 Version: 2.1.0
-Release: 5
+Release: 6
 License: Apache License, Version 2.0
 Group: Applications/System
 Source: %{name}-%{version}-%{release}.tar.gz
@@ -11,12 +11,13 @@ Requires: puppet >= 3.3.0
 Requires: pupmod-common >= 4.2.0-5
 Buildarch: noarch
 Requires: simp-bootstrap >= 4.2.0
+Requires: simp-simplib   >= 1.0.0
 Obsoletes: pupmod-functions-test
 
 Prefix:"/etc/puppet/environments/simp/modules"
 
 %description
-This Puppet module provides useful common functions.
+This Puppet module provides useful common defines.
 
 %prep
 %setup -q
@@ -53,6 +54,9 @@ fi
 # Post uninstall stuff
 
 %changelog
+* Sat Nov 07 2015 Chris Tessmer <chris.tessmer@onyxpoint.com> - 2.1.0-6
+- Moved functions into simplib
+
 * Thu May 07 2015 Chris Tessmer <chris.tessmer@onyxpoint.com> - 2.1.0-5
 - Explicitly require puppet/util/selinux in Init_ulimit sysv provider.
 - This prevents crashes during `puppet describe anything` on RHEL 7.1.
